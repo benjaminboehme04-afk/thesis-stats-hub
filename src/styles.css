@@ -142,8 +142,17 @@
     border-color: var(--color-border);
   }
 
+  html {
+    font-family: var(--font-sans);
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-feature-settings: "ss01", "cv11";
   }
+
+  .font-serif { font-family: var(--font-serif); font-feature-settings: "liga", "dlig"; }
+  .font-mono { font-family: var(--font-mono); }
 }
+
