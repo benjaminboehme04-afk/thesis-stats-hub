@@ -35,10 +35,10 @@ function HomePage() {
           <img
             src="/whu-logo.png"
             alt="WHU – Otto Beisheim School of Management"
-            className="object-contain object-right"
-            style={{ height: "64px", width: "auto" }}
+            className="object-contain object-right h-12 md:h-16 w-auto"
           />
         </div>
+
 
         <p
           className="text-center mb-10"
@@ -140,12 +140,13 @@ function HomePage() {
       </header>
 
       {/* Thesis Tracker heading */}
-      <div className="flex items-baseline justify-between px-1 pt-2 fade-up" style={{ animationDelay: "0.04s" }}>
+      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 px-1 pt-2 fade-up" style={{ animationDelay: "0.04s" }}>
         <h2 className="font-display font-bold text-black" style={{ fontSize: "22px", letterSpacing: "-0.01em" }}>
           Thesis Tracker
         </h2>
         <span className="lr-label">Last updated: {LAST_UPDATED}</span>
       </div>
+
 
       {/* Progress card */}
       <div className="glass p-6 fade-up" style={{ animationDelay: "0.06s" }}>
@@ -160,21 +161,22 @@ function HomePage() {
           })}
         </div>
 
-        <div className="flex flex-wrap gap-x-5 gap-y-2">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-x-5 gap-y-2 items-start">
           {STATUS_ORDER.map((s) =>
             (progress.byStatus[s] || 0) > 0 ? (
               <div key={s} className="flex items-center gap-2">
                 <StatusBadge status={s} size="sm" />
-                <span className="font-mono text-[11px] text-[rgba(60,60,67,0.45)]">
+                <span className="font-mono text-[11px] text-black">
                   {progress.byStatus[s]}
                 </span>
               </div>
             ) : null,
           )}
-          <span className="font-mono text-[11px] text-[rgba(60,60,67,0.35)] ml-auto">
+          <span className="font-mono text-[11px] text-black sm:ml-auto">
             {advanced} / {progress.total} sections drafted or further
           </span>
         </div>
+
       </div>
 
       {/* Table of Contents heading */}
@@ -204,9 +206,10 @@ function HomePage() {
                 ].join(" ")}
               >
                 <div className="flex items-start gap-3 mb-3">
-                  <span className="font-mono text-[12px] text-[rgba(60,60,67,0.32)] shrink-0 pt-[2px] w-5">
+                  <span className="font-mono text-[12px] text-black shrink-0 pt-[2px] w-5">
                     {chapter.number}.
                   </span>
+
                   <h3
                     className="font-display font-bold flex-1 text-black leading-[1.2]"
                     style={{ fontSize: "15px", letterSpacing: "-0.005em" }}
@@ -230,12 +233,13 @@ function HomePage() {
                             : "none",
                       }}
                     >
-                      <span className="font-mono text-[10px] text-[rgba(60,60,67,0.28)] shrink-0 w-8">
+                      <span className="font-mono text-[10px] text-black shrink-0 w-8">
                         {sub.number}
                       </span>
-                      <span className="text-[13px] text-[rgba(0,0,0,0.62)] flex-1 leading-[17px]">
+                      <span className="text-[13px] text-black flex-1 leading-[17px]">
                         {sub.title}
                       </span>
+
                       <StatusBadge status={sub.status} size="sm" />
                     </div>
                   ))}
@@ -243,8 +247,7 @@ function HomePage() {
 
                 <div className="pl-8">
                   <p
-                    className="font-mono text-[10px] font-semibold uppercase tracking-[0.07em] mb-2"
-                    style={{ color: "rgba(60,60,67,0.38)" }}
+                    className="font-mono text-[10px] font-semibold uppercase tracking-[0.07em] mb-2 text-black"
                   >
                     Chapter Contents
                   </p>
@@ -258,17 +261,15 @@ function HomePage() {
                           -
                         </span>
                         <span
-                          style={{
-                            fontSize: "13px",
-                            lineHeight: "18px",
-                            color: "rgba(60,60,67,0.62)",
-                          }}
+                          className="text-black"
+                          style={{ fontSize: "13px", lineHeight: "18px" }}
                         >
                           {bullet}
                         </span>
                       </li>
                     ))}
                   </ul>
+
                 </div>
               </div>
             ))}
