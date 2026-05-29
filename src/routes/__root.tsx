@@ -78,6 +78,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "Lestate Real — Masterthesis Status" },
       { property: "og:description", content: "Interaktive Thesis-Statusseite für Lestate Real | WHU PTMiM 27" },
       { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Lestate Real — Masterthesis Status" },
+      { name: "twitter:description", content: "Interaktive Thesis-Statusseite für Lestate Real | WHU PTMiM 27" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b5a3d6dc-55ff-45cc-b396-8030eebf8e92/id-preview-bc38c56f--6ed8d7f7-7779-4e83-82e6-f3f95766b59d.lovable.app-1780049743499.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b5a3d6dc-55ff-45cc-b396-8030eebf8e92/id-preview-bc38c56f--6ed8d7f7-7779-4e83-82e6-f3f95766b59d.lovable.app-1780049743499.png" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
